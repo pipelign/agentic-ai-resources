@@ -6,7 +6,10 @@ A growing collection of explanations, tools, workflows, research, and practical 
 
 ## Start here
 
-The [learning paths](learning/README.md) are the easiest way to get started. Follow a guided route through [ML fundamentals](learning/learning-paths/ml-fundamentals.md) or [understanding coding agents](learning/learning-paths/understanding-coding-agents.md).
+The [learning paths](learning/README.md) are the easiest way to get started.
+
+- [ML fundamentals](learning/learning-paths/ml-fundamentals.md)
+- [Understanding coding agents](learning/learning-paths/understanding-coding-agents.md)
 
 ## Quick links
 

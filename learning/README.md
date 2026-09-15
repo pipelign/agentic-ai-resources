@@ -2,16 +2,12 @@
 
 > AI Use Disclosure: Codex was used to research, organize, and draft this guide.
 
-Guided reading and viewing paths through the resources in this repository. Each path suggests an order and briefly explains how the linked material fits together.
-
 ## Choose a path
 
 | Path | Start here if you want to understand… | Background |
 | --- | --- | --- |
 | [ML fundamentals](learning-paths/ml-fundamentals.md) | How models learn, how embeddings represent information, and how those ideas lead to language models. | Basic algebra is helpful; no programming required. |
 | [Understanding coding agents](learning-paths/understanding-coding-agents.md) | How an agent uses context and tools, what guides its progress, and how people assess its work. | Familiarity with code, repositories, and tests. |
-
-These paths will grow with the collection. The ML path currently emphasizes neural networks and language representations; the coding-agent path connects the shared foundations to software-development practices.
 
 ## Browse by topic
 
