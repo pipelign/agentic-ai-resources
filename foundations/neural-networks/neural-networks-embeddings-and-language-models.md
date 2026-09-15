@@ -23,7 +23,7 @@ This guide follows the ideas behind neural networks: learning from examples, rep
 
 | Step | Question | Start here |
 | --- | --- | --- |
-| 1 | What is a neural network, and how does it learn? | [3Blue1Brown's first three chapters](#1-neural-networks-and-learning) |
+| 1 | What is a neural network, and how does it learn? | [3Blue1Brown's network overview](#1-neural-networks-and-learning) |
 | 2 | How does a language model generate a response? | [How language models work, with a short 3Blue1Brown explainer](../language-models/how-language-models-work.md) |
 | 3 | How does a representation change with its context? | [3Blue1Brown on transformers and attention](#3-transformers-and-attention) |
 | 4 | How does a pretrained model become an assistant? | [Demonstrations and feedback](../language-models/how-language-models-work.md#how-a-pretrained-model-becomes-an-assistant) |
@@ -39,11 +39,14 @@ The alternative videos offer a second explanation when a concept needs more time
 
 **Creator:** Grant Sanderson / 3Blue1Brown. **Format:** Animated explainers with illustrated text companions. **Level:** Beginner; calculus is optional for the initial intuition.
 
-Watch these in order:
+**Watch first:**
 
-1. **[But what is a neural network?](https://www.youtube.com/watch?v=aircAruvnKk)** — uses handwritten digits to introduce layers, activations, weights, and biases. The [illustrated lesson](https://www.3blue1brown.com/lessons/neural-networks/) is useful for revisiting the network diagram.
-2. **[Gradient descent, how neural networks learn](https://www.3blue1brown.com/lessons/gradient-descent/)** — connects prediction errors to a loss function and shows how parameter changes can reduce that loss. This link opens the video lesson and written explanation.
-3. **[Backpropagation, intuitively](https://www.youtube.com/watch?v=Ilg3gGewQ5U)** — explains how a training example supplies information about changes throughout the network. The [companion lesson](https://www.3blue1brown.com/lessons/backpropagation/) lets you inspect the steps at your own pace.
+- **[But what is a neural network?](https://www.youtube.com/watch?v=aircAruvnKk)** — watch **0:00–16:27**, about **16 minutes**, through the recap. Uses handwritten digits to introduce layers, activations, weights, biases, and their relationship to learning. The [illustrated lesson](https://www.3blue1brown.com/lessons/neural-networks/) is useful for revisiting the network diagram.
+
+**Go deeper into learning:**
+
+1. **[Gradient descent, how neural networks learn](https://www.3blue1brown.com/lessons/gradient-descent/)** — connects prediction errors to a loss function and shows how parameter changes can reduce that loss. This link opens the video lesson and written explanation.
+2. **[Backpropagation, intuitively](https://www.youtube.com/watch?v=Ilg3gGewQ5U)** — explains how a training example supplies information about changes throughout the network. The [companion lesson](https://www.3blue1brown.com/lessons/backpropagation/) lets you inspect the steps at your own pace.
 
 **Takeaway:** Training adjusts parameters using examples and a learning objective. Backpropagation calculates gradients; an optimizer uses them to update parameters. Inference uses the resulting parameters to process an input. The small digit classifier makes those roles visible.
 

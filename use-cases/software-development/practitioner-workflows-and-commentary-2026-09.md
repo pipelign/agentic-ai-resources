@@ -69,7 +69,13 @@ Litt argues that understanding enables people to contribute to the next design i
 
 This workshop connects clarification, product intent, vertical slices, agent execution, QA, and architectural decisions. Its value is seeing the handoffs between these activities and where human judgment remains necessary. The publisher’s [companion page](https://ai.engineer/talks/ai-coding-workflow) provides chapters and an explanation of the workflow.
 
-Useful starting points are **12:16** for the clarification session, **39:37** for vertical slices, and **1:09:04** for QA and review. Skill names and product details in the recording may differ from the packages described in the [Matt Pocock workflow section](#matt-pocock-a-workflow-expressed-as-skills).
+Selected chapters, about **38 minutes** in total:
+
+- [12:16–31:27](https://www.youtube.com/watch?v=-QFHIoCo-Ko&t=736s) — clarification, about **19 minutes**.
+- [39:37–53:52](https://www.youtube.com/watch?v=-QFHIoCo-Ko&t=2377s) — vertical slices, about **14 minutes**.
+- [1:09:04–1:13:54](https://www.youtube.com/watch?v=-QFHIoCo-Ko&t=4144s) — QA and review, about **5 minutes**.
+
+The full workshop runs about **97 minutes**. Skill names and product details in the recording may differ from the packages described in the [Matt Pocock workflow section](#matt-pocock-a-workflow-expressed-as-skills).
 
 **Practical application:** Try the workflow on one bounded feature. Resolve the important uncertainties, choose a slice with observable behavior, and explicitly review both the working result and the design it introduces. Adapt the amount of process to the task.
 
@@ -87,7 +93,7 @@ Pocock describes a skill for incremental red/green/refactor development. He focu
 
 Farley discusses test-driven and behavior-driven development, incremental learning, and verification of agent output. He challenges the idea that a complete specification can settle an exploratory development process in advance. The episode connects clear expectations with executable examples and ongoing feedback.
 
-Relevant chapters include **16:39** on TDD and BDD, **20:37** on testing and feedback loops, and **25:30** on ambiguity in specifications.
+Watch **16:39–29:29**, about **13 minutes**, for the connected discussion of TDD and BDD, testing and feedback loops, and ambiguity in specifications.
 
 **Practical application:** Turn an important user expectation into an executable acceptance example, then implement a small increment and inspect the result. Revise the next step using what was learned. Track whether failures are found earlier and whether the resulting tests remain useful as the design changes.
 
@@ -97,7 +103,13 @@ Relevant chapters include **16:39** on TDD and BDD, **20:37** on testing and fee
 
 Horthy connects context management with research, explicit plans, and human review. The emphasis on maintaining a shared understanding of the system makes this useful for existing codebases where plausible edits can conflict with architecture or hidden constraints. His reported outcomes describe his team’s experience, not a general productivity guarantee.
 
-Useful chapters are **7:41** for research–plan–implement, **10:11** for responsibilities to retain, and **15:02** for mental alignment.
+Selected chapters, about **8 minutes** in total:
+
+- [7:41–10:11](https://www.youtube.com/watch?v=rmvDxxNubIg&t=461s) — research–plan–implement and an example.
+- [10:11–12:07](https://www.youtube.com/watch?v=rmvDxxNubIg&t=611s) — responsibilities to retain.
+- [15:02–18:23](https://www.youtube.com/watch?v=rmvDxxNubIg&t=902s) — mental alignment.
+
+The full talk runs about **21 minutes**.
 
 **Practical application:** Before a complex change, review a short account of the relevant code paths and proposed implementation. Correct mistaken assumptions while they are still inexpensive, then verify the resulting change against the agreed behavior.
 

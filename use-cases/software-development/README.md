@@ -9,13 +9,9 @@ Guides and resources for using agents to investigate, implement, test, and revie
 
 Both guides assume familiarity with repositories, tests, and code review.
 
-## Suggested reading order
+## Start here
 
-1. [How agents work](../../foundations/agent-loops-and-autonomy/how-agents-work.md) — understand the model, harness, tools, environment, and action loop.
-2. [Context engineering and memory](../../foundations/context-and-memory/context-engineering-and-memory.md) — understand what information reaches the model and survives between steps.
-3. [Skills, tools, hooks, and delegation](../../foundations/tool-use-and-integrations/skills-tools-hooks-and-delegation.md) — connect procedures, integrations, and separate agent contexts.
-4. [Agentic coding practices](agentic-coding-best-practices-2026-09.md) — follow the worked example and examine engineering feedback and evidence.
-5. [Practitioner workflows and commentary](practitioner-workflows-and-commentary-2026-09.md) — compare published approaches and explore the accompanying talks.
+- [Understanding coding agents](../../learning/learning-paths/understanding-coding-agents.md) — language models, agent loops, context, tools, and verification.
 
 ## Further reading
 

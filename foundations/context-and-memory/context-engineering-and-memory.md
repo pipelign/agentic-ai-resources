@@ -11,6 +11,7 @@ Useful agent behavior depends on which information is available at each step and
 ## Contents
 
 - [What context engineering means](#what-context-engineering-means)
+- [Retrieval-augmented generation](#retrieval-augmented-generation)
 - [State, memory, compaction, and caching](#state-memory-compaction-and-caching)
 - [Illustrative example: continuing a research task](#illustrative-example-continuing-a-research-task)
 
@@ -33,11 +34,13 @@ Prompt writing is one part of it. In an extended agent task, the larger problem 
 | Skill material | Catalog descriptions, activated instructions, selected references. | Wrong skill selection or unnecessary resource loading. |
 | Multimodal observations | Screenshots, rendered pages, diagrams. | Producing an artifact without actually supplying it to a model that can inspect it. |
 
-The context window is the information available to a particular model call. A document collection or code repository can contain thousands of files while that call sees only a few excerpts. An agent may search and open additional files, but their existence on disk does not mean the model has already read them. Similarly, a screenshot saved by a tool is not necessarily a screenshot the model has inspected.
+The **context window** is the model's bounded capacity for context, usually measured in tokens. Instructions, conversation history, retrieved material, and generated output must fit within the applicable limits. As a task grows, the harness may need to select fewer excerpts, remove old output, or compact the history. A larger window permits more material; usefulness still depends on relevance and how well the model uses it. [Context engineering and its limits](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents).
+
+A document collection or code repository can contain thousands of files while a particular call sees only a few excerpts. An agent may search and open additional files, but their existence on disk does not mean the model has already read them. Similarly, a screenshot saved by a tool is not necessarily a screenshot the model has inspected.
 
 ### How useful context gets selected
 
-Common approaches combine predictable initial guidance with retrieval during the task. Workspace instructions describe the task environment and its conventions. Searches, file reads, record lookups, and documentation tools supply details when needed. Retrieval-augmented generation, or RAG, is one retrieval technique; context engineering also covers the selection policy, timing, presentation, and subsequent handling of retrieved material.
+Common approaches combine predictable initial guidance with retrieval during the task. Workspace instructions describe the task environment and its conventions. Searches, file reads, record lookups, and documentation tools supply details when needed. Context engineering covers the selection, timing, presentation, and subsequent handling of that material.
 
 For example, a failed test may produce a large log. Useful context might be the failure summary, the relevant stack frames, and the changed function. Loading the entire log can consume space without improving diagnosis. Conversely, trimming away the actual assertion can remove the only useful evidence. The aim is sufficient, relevant information, not simply the fewest tokens.
 
@@ -48,6 +51,26 @@ Claude Code explicitly distinguishes instructions loaded as context from enforce
 A practical synthesis is to keep standing guidance focused, retrieve task-specific details on demand, preserve the source of important claims, and revisit originals when a summary is insufficient. This requires both harness features and judgment during the task.
 
 For an illustrative research task, useful context might include the question, inclusion criteria, selected passages, and the source of each claim. A short summary that drops a study's limitations could lead to a misleading comparison. Choosing context includes deciding which qualifications must travel with the evidence.
+
+## Retrieval-augmented generation
+
+**Retrieval-augmented generation (RAG)** combines finding relevant material with generating a response that uses it. Retrieval supplies evidence; generation produces the answer. The [original RAG paper](https://arxiv.org/abs/2005.11401) combined a document retriever with a pretrained language generator. Its particular architecture is one implementation of that combination.
+
+Consider an illustrative request: “Can this delayed order be refunded?”
+
+| Step | What happens |
+| --- | --- |
+| Find material | Search the policy collection for delivery and refund rules. |
+| Select passages | Keep the applicable policy sections and their source references. |
+| Supply context | Give the model the question, order details, and selected passages. |
+| Generate | Draft an answer using the supplied information. |
+| Check | Verify that the cited policy supports the answer and applies to this order. |
+
+An [embedding-based search](../neural-networks/neural-networks-embeddings-and-language-models.md#5-sentence-embeddings-and-semantic-search) can help find passages with related meaning. Keyword searches and direct lookups can also supply useful context. The model receives the selected results; it does not automatically see the whole collection.
+
+Retrieval can fail to find an exception, and generation can misinterpret a passage that was found. Those are separate problems to diagnose. In the example, a refund answer should account for both the order's circumstances and the applicable rule.
+
+Supplying a policy in context lets a trained model use it for this request. Updating the model's weights would require training. Retrieved text also remains source material: it does not grant permission to issue a refund or change the task. See [instructions, evidence, and permissions](../agent-loops-and-autonomy/how-agents-work.md#instructions-evidence-and-permissions).
 
 ## State, memory, compaction, and caching
 

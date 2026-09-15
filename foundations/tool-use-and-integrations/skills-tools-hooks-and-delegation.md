@@ -4,15 +4,59 @@
 
 > AI Use Disclosure: Codex was used to research, organize, and draft this guide.
 
-Skills describe procedures, tools expose operations, hooks respond to events, and delegated agents carry out subtasks. This article explains their roles and how they interact. Named host behaviors retain the September 2026 source context; research and support scenarios are illustrative.
+Tools expose operations, skills describe procedures, hooks respond to events, and delegated agents carry out subtasks. This article explains their roles and how they interact. Named host behaviors retain the September 2026 source context; research and support scenarios are illustrative.
 
 **Audience and prerequisites:** Readers configuring or building agent workflows. Familiarity with the [agent loop](../agent-loops-and-autonomy/how-agents-work.md) is useful; implementation sections assume basic familiarity with files and APIs.
 
 ## Contents
 
-- [How a harness discovers and uses a skill](#how-a-harness-discovers-and-uses-a-skill)
+- [The basic tool exchange](#the-basic-tool-exchange)
 - [Tools, MCP, hooks, and subagents](#tools-mcp-hooks-and-subagents)
+- [How a harness discovers and uses a skill](#how-a-harness-discovers-and-uses-a-skill)
 - [Illustrative example: customer-support triage](#illustrative-example-customer-support-triage)
+
+## The basic tool exchange
+
+A tool gives an agent an operation it can request. Consider a tool that looks up an order:
+
+1. **Describe the operation.** The model receives a tool name, its purpose, and the arguments it accepts, such as an order ID.
+2. **Request a call.** The model selects the lookup tool and supplies the ID from the task. This is a request to execute an operation.
+3. **Execute and return a result.** The harness applies its execution rules, calls the implementation, and supplies the returned order record or error to the model.
+4. **Use the result.** The model can answer, request another operation, or ask for missing information.
+
+The [agent-loop diagram](../agent-loops-and-autonomy/how-agents-work.md#what-happens-inside-the-agent-loop) shows this exchange. A file read, a shell command, and a remote service call can all be exposed as tools. Their implementations determine what actually happens in the environment.
+
+An order lookup can work without a skill package, an MCP connection, a hook, or another agent. Those additions can organize procedures, connect services, automate checks, or divide work when the task calls for them.
+
+## Tools, MCP, hooks, and subagents
+
+MCP, hooks, and subagents provide optional ways to connect and coordinate capabilities.
+
+### Tools and MCP: access to capabilities
+
+A tool interface tells the model what operation is available and which arguments it accepts. The implementation might execute a shell command, read a file, or call a remote service. Good interfaces expose a clear purpose and return enough information to choose the next action.
+
+The **Model Context Protocol**, or MCP, standardizes communication between an AI application and servers exposing capabilities. Its architecture includes hosts, clients, and servers. Servers can expose tools, resources, and prompts: callable operations, contextual data, and reusable interaction templates. The host remains responsible for integrating those capabilities into its agent experience. MCP does not itself choose the task strategy or establish that a task is complete. [MCP architecture](https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture).
+
+A skill could instruct an agent to inspect an issue through an MCP tool, use local shell tools to make the fix, and verify it in a browser. In that arrangement, the skill supplies a procedure, MCP supplies an integration interface, and the harness coordinates the calls. The procedure could also work with a different integration exposing equivalent capabilities.
+
+### Hooks: behavior attached to events
+
+A hook runs because an event occurs, such as session startup, a tool request, or completion of an edit. This differs from guidance that asks the model to remember to perform an action.
+
+Hook systems can run commands, call endpoints, or invoke model-based evaluators. A script that checks a path can provide a predictable decision; a model-based hook adds another inference with its own limitations. Whether a hook can block an operation or merely observe it depends on its event and host semantics. Claude Code documents these distinctions through its event inputs and decision controls. [Hooks reference](https://code.claude.com/docs/en/hooks).
+
+For a requirement such as “this check must pass before merge,” a protected CI gate provides a different enforcement point from a local instruction or a hook the developer can disable. The appropriate mechanism depends on what must be guaranteed and who controls the runtime.
+
+### Subagents: additional contexts and execution loops
+
+A subagent receives a delegated task and performs its own model-and-tool loop. This can isolate a lengthy investigation, enable parallel work, or give a specialist different tools. The parent usually receives a result or summary, rather than automatically absorbing the entire child transcript. What is inherited from the parent varies by implementation and delegation mode. [Claude Code subagents](https://code.claude.com/docs/en/sub-agents).
+
+Context isolation is not filesystem isolation. Two agents may have separate conversations while modifying the same files. Separate worktrees can isolate edits, but databases, ports, remote services, and credentials may still be shared. Useful delegation therefore needs both an information contract—what question to answer and what evidence to return—and an execution boundary.
+
+For an illustrative research workflow, one delegated agent could examine methods while another examines reported results. Each would return source links, relevant passages, and unresolved questions. If both edit the same comparison table, their separate conversations would still leave a shared editing problem to coordinate.
+
+Parallelism is most straightforward for independent investigations or changes with clear ownership. It becomes harder when multiple agents repeatedly alter the same interfaces. Cursor’s published scaling experiments describe coordination problems with an undifferentiated worker pool and a subsequent separation of planning and execution roles. Those are lessons from a particular large-scale experiment, not evidence that every coding task needs an agent hierarchy. [Scaling long-running autonomous coding](https://cursor.com/blog/scaling-agents).
 
 ## How a harness discovers and uses a skill
 
@@ -53,36 +97,6 @@ The open packaging convention does not specify identical runtime behavior everyw
 Some metadata is operational configuration. For example, Claude Code supports fields that affect tool access, request a separate subagent context, or register hooks. Its `allowed-tools` behavior can preapprove tools during a skill invocation. Consequently, a skill package can contain both model-facing prose and host-interpreted settings. Reviewing only the Markdown body misses part of its behavior. These controls are product-specific; they should not be assumed to work in another client. [Claude Code skills](https://code.claude.com/docs/en/skills).
 
 The distinction is therefore: **the model interprets the procedure; the harness implements loading, execution, and supported configuration semantics.** A skill is not inherently a separate agent, an installed model capability, or a guaranteed permission boundary.
-
-## Tools, MCP, hooks, and subagents
-
-These mechanisms often appear together, but they solve different problems.
-
-### Tools and MCP: access to capabilities
-
-A tool interface tells the model what operation is available and which arguments it accepts. The implementation might execute a shell command, read a file, or call a remote service. Good interfaces expose a clear purpose and return enough information to choose the next action.
-
-The **Model Context Protocol**, or MCP, standardizes communication between an AI application and servers exposing capabilities. Its architecture includes hosts, clients, and servers. Servers can expose tools, resources, and prompts: callable operations, contextual data, and reusable interaction templates. The host remains responsible for integrating those capabilities into its agent experience. MCP does not itself choose the task strategy or establish that a task is complete. [MCP architecture](https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture).
-
-A skill could instruct an agent to inspect an issue through an MCP tool, use local shell tools to make the fix, and verify it in a browser. In that arrangement, the skill supplies a procedure, MCP supplies an integration interface, and the harness coordinates the calls. The procedure could also work with a different integration exposing equivalent capabilities.
-
-### Hooks: behavior attached to events
-
-A hook runs because an event occurs, such as session startup, a tool request, or completion of an edit. This differs from guidance that asks the model to remember to perform an action.
-
-Hook systems can run commands, call endpoints, or invoke model-based evaluators. A script that checks a path can provide a predictable decision; a model-based hook adds another inference with its own limitations. Whether a hook can block an operation or merely observe it depends on its event and host semantics. Claude Code documents these distinctions through its event inputs and decision controls. [Hooks reference](https://code.claude.com/docs/en/hooks).
-
-For a requirement such as “this check must pass before merge,” a protected CI gate provides a different enforcement point from a local instruction or a hook the developer can disable. The appropriate mechanism depends on what must be guaranteed and who controls the runtime.
-
-### Subagents: additional contexts and execution loops
-
-A subagent receives a delegated task and performs its own model-and-tool loop. This can isolate a lengthy investigation, enable parallel work, or give a specialist different tools. The parent usually receives a result or summary, rather than automatically absorbing the entire child transcript. What is inherited from the parent varies by implementation and delegation mode. [Claude Code subagents](https://code.claude.com/docs/en/sub-agents).
-
-Context isolation is not filesystem isolation. Two agents may have separate conversations while modifying the same files. Separate worktrees can isolate edits, but databases, ports, remote services, and credentials may still be shared. Useful delegation therefore needs both an information contract—what question to answer and what evidence to return—and an execution boundary.
-
-For an illustrative research workflow, one delegated agent could examine methods while another examines reported results. Each would return source links, relevant passages, and unresolved questions. If both edit the same comparison table, their separate conversations would still leave a shared editing problem to coordinate.
-
-Parallelism is most straightforward for independent investigations or changes with clear ownership. It becomes harder when multiple agents repeatedly alter the same interfaces. Cursor’s published scaling experiments describe coordination problems with an undifferentiated worker pool and a subsequent separation of planning and execution roles. Those are lessons from a particular large-scale experiment, not evidence that every coding task needs an agent hierarchy. [Scaling long-running autonomous coding](https://cursor.com/blog/scaling-agents).
 
 ## Illustrative example: customer-support triage
 

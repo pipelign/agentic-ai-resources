@@ -8,7 +8,7 @@ Agentic coding combines a language model with a runtime that lets it inspect a p
 
 This guide connects a worked example to engineering practices and evidence available in September 2026. Product documentation describes supported behavior; practitioner accounts illustrate particular approaches; empirical results apply to their studied settings. Recommendations and illustrative examples are a synthesis, not a claim that one workflow has been universally validated.
 
-**Audience and prerequisites:** Developers and technical reviewers familiar with repositories, tests, and code review. The [software-development reading path](README.md#suggested-reading-order) introduces the agent concepts used here.
+**Audience and prerequisites:** Developers and technical reviewers familiar with repositories, tests, and code review. The [Understanding coding agents learning path](../../learning/learning-paths/understanding-coding-agents.md) introduces the agent concepts used here.
 
 ## Contents
 
@@ -140,4 +140,4 @@ These questions favor measuring completed engineering outcomes over generated li
 ## Related reading
 
 - [Practitioner workflows and commentary](practitioner-workflows-and-commentary-2026-09.md) collects published approaches and annotated videos.
-- [Software-development index and further reading](README.md) includes workflow packages and the full reading path.
+- [Software-development index and further reading](README.md) includes workflow packages.

@@ -12,9 +12,9 @@ A large language model (LLM) is a neural network trained on language at scale. T
 
 | Resource | What it explains | Background and scope |
 | --- | --- | --- |
-| Grant Sanderson / 3Blue1Brown: [Large Language Models explained briefly](https://www.youtube.com/watch?v=LPZh9BOjkQs), with an [illustrated companion](https://www.3blue1brown.com/lessons/mini-llm/) | A short animated overview of prediction, training, and transformers. | Beginner; start here. Uses words to simplify the explanation of tokens. |
-| Josh Starmer / StatQuest: [Reinforcement Learning with Human Feedback, Clearly Explained](https://www.youtube.com/watch?v=qPN_XZcJf_s) | Pretraining, supervised fine-tuning, and learning from preferences. | Basic neural-network knowledge helps. Explains the InstructGPT approach; training recipes vary. |
-| Andrej Karpathy: [Deep Dive into LLMs like ChatGPT](https://www.youtube.com/watch?v=7xTGNNLPyMI) | A longer account of the training process and model behavior. | Optional lecture of over three hours. Start at [59:23 for the transition to assistant training](https://www.youtube.com/watch?v=7xTGNNLPyMI&t=3563s). Product examples reflect February 2025. |
+| **Start with the model:** Grant Sanderson / 3Blue1Brown, [Large Language Models explained briefly](https://www.youtube.com/watch?v=LPZh9BOjkQs), about **8 minutes**, with an [illustrated companion](https://www.3blue1brown.com/lessons/mini-llm/) | Prediction, training, and transformers. | Beginner. Uses words to simplify the explanation of tokens. |
+| **Continue into assistant training:** Andrej Karpathy, [59:23–1:20:32](https://www.youtube.com/watch?v=7xTGNNLPyMI&t=3563s), about **21 minutes** | The transition from a base model to an assistant trained on conversations. | Part of [Deep Dive into LLMs like ChatGPT](https://www.youtube.com/watch?v=7xTGNNLPyMI). The full lecture is optional and runs over three hours; examples reflect February 2025. |
+| **Go deeper into feedback:** Josh Starmer / StatQuest, [Reinforcement Learning with Human Feedback, Clearly Explained](https://www.youtube.com/watch?v=qPN_XZcJf_s) | Pretraining, supervised fine-tuning, and learning from preferences. | Basic neural-network knowledge helps. Explains the InstructGPT approach; training recipes vary. |
 
 These are creator-produced educational videos. The papers and documentation below support the technical distinctions. Resource descriptions were reviewed on **2026-09-15**.
 
@@ -50,6 +50,8 @@ Predicting text across many domains can support capabilities such as translation
 
 ## How a pretrained model becomes an assistant
 
+**Watch:** Karpathy's [transition to assistant training, 59:23–1:20:32](https://www.youtube.com/watch?v=7xTGNNLPyMI&t=3563s), about **21 minutes**. The [StatQuest explainer](https://www.youtube.com/watch?v=qPN_XZcJf_s) adds detail on human preference feedback.
+
 A pretrained **base model** learns to continue text. **Post-training** further changes its weights to shape behavior such as answering questions and following instructions. One influential recipe is:
 
 | Stage | Training signal | Intended effect |
@@ -76,7 +78,7 @@ Suppose a delivery assistant receives `Order 42 now arrives on Friday` from a lo
 
 **BERT** uses an encoder to build contextual representations, with original pretraining that included predicting masked tokens. **GPT-style models** use preceding context to predict the next token. Both learn language representations, with different training objectives and typical uses. [Original BERT paper](https://arxiv.org/abs/1810.04805); [GPT-3 paper](https://arxiv.org/abs/2005.14165).
 
-An embedding model can help retrieve relevant delivery policies; a generative model can then use those passages to draft a reply. Follow the [word2vec, BERT, and sentence-embedding explanations](../neural-networks/neural-networks-embeddings-and-language-models.md#2-vector-embeddings-and-word2vec) for that branch of the story.
+An embedding model can help retrieve relevant delivery policies; a generative model can then use those passages to draft a reply. The [retrieval-augmented generation example](../context-and-memory/context-engineering-and-memory.md#retrieval-augmented-generation) connects those steps. Follow the [word2vec, BERT, and sentence-embedding explanations](../neural-networks/neural-networks-embeddings-and-language-models.md#2-vector-embeddings-and-word2vec) for the underlying representations.
 
 ## Why convincing responses can be wrong
 

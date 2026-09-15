@@ -18,11 +18,12 @@ How coding agents use context, tools, and feedback, and how to assess their work
 ## 3. Understand what the agent can see
 
 - [What context engineering means](../../foundations/context-and-memory/context-engineering-and-memory.md#what-context-engineering-means) — selecting the information available to the model at each step.
+- [Retrieval-augmented generation](../../foundations/context-and-memory/context-engineering-and-memory.md#retrieval-augmented-generation) — connecting retrieved passages to an answer.
 - [State, memory, compaction, and caching](../../foundations/context-and-memory/context-engineering-and-memory.md#state-memory-compaction-and-caching) — preserving decisions and working state across a task.
 
 ## 4. Connect procedures to actions
 
-- [Skills, tools, hooks, and delegation](../../foundations/tool-use-and-integrations/skills-tools-hooks-and-delegation.md) — procedures, operations, events, and delegated subtasks.
+- [The basic tool exchange](../../foundations/tool-use-and-integrations/skills-tools-hooks-and-delegation.md#the-basic-tool-exchange) — requests, execution, results, and the next action.
 
 ## 5. Follow one task from request to result
 
@@ -36,14 +37,16 @@ How coding agents use context, tools, and feedback, and how to assess their work
 
 ## 7. Bring human understanding into the picture
 
-1. [Geoffrey Litt: understanding as participation](../../use-cases/software-development/practitioner-workflows-and-commentary-2026-09.md#understanding-as-participation-geoffrey-litt) — why understanding a change matters for deciding what comes next.
-2. [Matt Pocock: a complete development workflow](../../use-cases/software-development/practitioner-workflows-and-commentary-2026-09.md#a-complete-development-workflow-matt-pocock) — how clarification, implementation, and review connect in practice.
-3. [Dex Horthy: keeping teams aligned in complex codebases](../../use-cases/software-development/practitioner-workflows-and-commentary-2026-09.md#keeping-teams-aligned-in-complex-codebases-dex-horthy) — how research, plans, and context management support shared understanding.
+- [Geoffrey Litt: understanding as participation](../../use-cases/software-development/practitioner-workflows-and-commentary-2026-09.md#understanding-as-participation-geoffrey-litt) — why understanding a change matters for deciding what comes next.
 
 [More videos](../../use-cases/software-development/practitioner-workflows-and-commentary-2026-09.md#videos-improving-quality-and-human-understanding) — software fundamentals, testing, and continuous feedback.
 
 ## Explore different working styles
 
+- [How a harness discovers and uses a skill](../../foundations/tool-use-and-integrations/skills-tools-hooks-and-delegation.md#how-a-harness-discovers-and-uses-a-skill) — loading a procedure and its supporting resources.
+- [Tools, MCP, hooks, and subagents](../../foundations/tool-use-and-integrations/skills-tools-hooks-and-delegation.md#tools-mcp-hooks-and-subagents) — integrations, event-driven checks, and delegated work.
+- [Matt Pocock: a complete development workflow](../../use-cases/software-development/practitioner-workflows-and-commentary-2026-09.md#a-complete-development-workflow-matt-pocock) — how clarification, implementation, and review connect in practice.
+- [Dex Horthy: keeping teams aligned in complex codebases](../../use-cases/software-development/practitioner-workflows-and-commentary-2026-09.md#keeping-teams-aligned-in-complex-codebases-dex-horthy) — how research, plans, and context management support shared understanding.
 - [Published practitioner workflows](../../use-cases/software-development/practitioner-workflows-and-commentary-2026-09.md#published-practitioner-workflows) — approaches to planning, context, implementation, and review.
 
 [Back to learning](../README.md)

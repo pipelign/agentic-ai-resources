@@ -4,7 +4,7 @@ How agents discover procedures, access capabilities, respond to events, and dele
 
 ## Start here
 
-- [Skills, tools, hooks, and delegation](skills-tools-hooks-and-delegation.md) explains the mechanisms and their boundaries. Implementation sections assume basic familiarity with files and APIs.
+- [Skills, tools, hooks, and delegation](skills-tools-hooks-and-delegation.md) starts with the basic tool exchange, then introduces optional integrations and procedures. Implementation sections assume basic familiarity with files and APIs.
 
 ## Specifications and integration guides
 

@@ -12,11 +12,11 @@ Reasoning models are language models developed to work through problems using in
 
 These selected chapters come from Andrej Karpathy's [Deep Dive into LLMs like ChatGPT](https://www.youtube.com/watch?v=7xTGNNLPyMI), a creator-produced lecture published in February 2025:
 
-| Start | Focus |
-| --- | --- |
-| [1:46:56 — models need tokens to think](https://www.youtube.com/watch?v=7xTGNNLPyMI&t=6416s) | Why intermediate generation can help with a problem. The chapter title is a teaching shorthand, not a claim that all computation is written in words. |
-| [2:07:28 — from supervised fine-tuning to reinforcement learning](https://www.youtube.com/watch?v=7xTGNNLPyMI&t=7648s) | Demonstrations, attempted solutions, and feedback. Continue through the reinforcement-learning chapter. |
-| [2:27:47 — DeepSeek-R1](https://www.youtube.com/watch?v=7xTGNNLPyMI&t=8867s) | A concrete reasoning-model example. Product comparisons reflect the lecture's date. |
+| Selection | Watch | Focus |
+| --- | --- | --- |
+| **Start here** | [1:46:56–2:01:11 — models need tokens to think](https://www.youtube.com/watch?v=7xTGNNLPyMI&t=6416s), about **14 minutes** | Why intermediate generation can help with a problem. The chapter title is a teaching shorthand, not a claim that all computation is written in words. |
+| Go deeper into training | [2:07:28–2:27:47 — from supervised fine-tuning to reinforcement learning](https://www.youtube.com/watch?v=7xTGNNLPyMI&t=7648s), about **20 minutes** | Demonstrations, attempted solutions, and feedback, including the reinforcement-learning chapter. |
+| Explore a model example | [2:27:47–2:42:07 — DeepSeek-R1](https://www.youtube.com/watch?v=7xTGNNLPyMI&t=8867s), about **14 minutes** | A concrete reasoning-model example. Product comparisons reflect the lecture's date. |
 
 For background on learning from preferences, see [StatQuest's RLHF explainer](https://www.youtube.com/watch?v=qPN_XZcJf_s). Human preference feedback and a machine-checkable answer supply different kinds of reward. Resource descriptions were reviewed on **2026-09-15**.
 
