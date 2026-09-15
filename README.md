@@ -4,9 +4,12 @@ A growing collection of explanations, tools, workflows, research, and practical 
 
 > **Work in progress:** Coverage is partial, and the content and organization are still evolving. The initial material focuses on AI fundamentals and software-development agents. Most of the broader application areas below are planned additions.
 
+## Start here
+
+The [learning paths](learning/README.md) are the easiest way to get started. Follow a guided route through [ML fundamentals](learning/learning-paths/ml-fundamentals.md) or [understanding coding agents](learning/learning-paths/understanding-coding-agents.md).
+
 ## Quick links
 
-- **[Learning paths](learning/README.md) — the easiest way to get started.** Follow guided routes through ML fundamentals and understanding coding agents.
 - [Foundations](foundations/README.md) — neural networks and embeddings, agent loops, context and memory, skills, tools, and delegation.
 - [Use cases](use-cases/README.md) — applied guides and resources, starting with software development.
 
