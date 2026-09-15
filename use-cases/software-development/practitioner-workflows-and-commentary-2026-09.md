@@ -12,6 +12,7 @@ This collection brings together published development workflows and annotated ta
 
 - [Published practitioner workflows](#published-practitioner-workflows)
 - [Videos: improving quality and human understanding](#videos-improving-quality-and-human-understanding)
+  - [Amendment: RPI, deferred responsibility, and cognitive load](#amendment-rpi-deferred-responsibility-and-cognitive-load)
 
 ## Published practitioner workflows
 
@@ -23,7 +24,7 @@ These accounts are useful examples of how people structure work. They describe d
 | **Addy Osmani** | Describes a workflow built around specifications, planning, relevant context, incremental implementation, and review. | Human effort can move toward clarifying intent and evaluating changes. See [AI coding workflow](https://addyosmani.com/blog/ai-coding-workflow/). |
 | **Matt Pocock / AI Hero** | Publishes a development workflow as composable skills: clarify the idea, write a specification, divide work into tickets, implement, and review. | Connects engineering practices to concrete skill packages and deliberate context boundaries. See [AI Hero](https://www.aihero.dev/) and [his skills repository](https://github.com/mattpocock/skills). |
 | **Boris Tane** | Separates research and planning into Markdown documents, annotates the plan, then permits implementation. | A persistent plan becomes a concrete interface for correcting assumptions before code changes. See [How I use Claude Code](https://boristane.com/blog/how-i-use-claude-code/). |
-| **Dex Horthy / HumanLayer** | Uses research, planning, and implementation phases with deliberate context management. | Reviewed intermediate artifacts can compress investigation into useful inputs for later work. See [Advanced context engineering](https://www.humanlayer.dev/blog/advanced-context-engineering). |
+| **Dex Horthy / HumanLayer** | Developed research–plan–implement (RPI), then increasingly emphasized human decisions, code ownership, and the limits of harness engineering. | Read [Advanced context engineering](https://www.humanlayer.dev/blog/advanced-context-engineering) alongside his [RPI amendment and later perspective](#amendment-rpi-deferred-responsibility-and-cognitive-load). |
 | **Peter Steinberger** | Describes rapid iteration, direct tool use, concurrent work, and verification in a highly practiced personal workflow. | An experienced operator can choose different levels of involvement across tasks. His throughput is not a transferable baseline. See [Shipping at inference speed](https://steipete.me/posts/2025/shipping-at-inference-speed). |
 | **Thariq Shihipar / Claude Code** | Describes skills used for recurring procedures, domain knowledge, gotchas, and operational workflows. | Skills can encode practical knowledge that would otherwise need rediscovery. See [How we use skills](https://www.linkedin.com/pulse/lessons-from-building-claude-code-how-we-use-skills-thariq-shihipar-iclmc). |
 | **Geoffrey Huntley** | Popularized the Ralph loop: repeatedly run an agent against a bounded task, using external feedback and persistent state. | The outer loop and the quality of its stopping conditions matter alongside the individual model response. See [Ralph](https://ghuntley.com/ralph/). |
@@ -112,6 +113,26 @@ Selected chapters, about **8 minutes** in total:
 The full talk runs about **21 minutes**.
 
 **Practical application:** Before a complex change, review a short account of the relevant code paths and proposed implementation. Correct mistaken assumptions while they are still inexpensive, then verify the resulting change against the agreed behavior.
+
+#### Amendment: RPI, deferred responsibility, and cognitive load
+
+**[Everything We Got Wrong About Research-Plan-Implement](https://www.youtube.com/watch?v=YwZR6tc7qYg)** — Dexter (Dex) Horthy, HumanLayer. Recorded at the Coding Agents Conference on **March 3, 2026**; published **March 24, 2026**. The full talk runs about **27 minutes**.
+
+**Source type:** Practitioner retrospective. **Last reviewed:** 2026-09-15. This annotation uses the publisher's description and a [timestamped transcript](https://www.usetranscribe.io/yt/YwZR6tc7qYg/research-plan-implement); the talk is paraphrased below.
+
+Read this as an amendment to the earlier RPI guidance. Horthy retracts his advice that reviewing plans could justify skipping code reading: his team tried that approach and subsequently replaced substantial parts of a system. Long plans also created duplicate review work when implementation diverged. His revised approach uses smaller workflow stages, short design discussions and structure outlines for human decisions, spot-checks of detailed plans, and deeper review of the actual code.
+
+Selected passages, about **9 minutes** in total:
+
+- [8:02–10:53](https://www.youtube.com/watch?v=YwZR6tc7qYg&t=482s) — plan-review costs, the correction on reading code, and ownership.
+- [14:49–19:33](https://www.youtube.com/watch?v=YwZR6tc7qYg&t=889s) — shorter review artifacts and working slices with testing checkpoints.
+- [19:33–21:10](https://www.youtube.com/watch?v=YwZR6tc7qYg&t=1173s) — team alignment and the work remaining after code generation.
+
+**Later perspective:** In [Harness Engineering is not Enough: Why Software Factories Fail](https://www.youtube.com/watch?v=Ib5GBkD555M) (AI Engineer World's Fair 2026), Horthy extends this correction. He argues that passing tests does not establish long-term maintainability, and that more agent loops cannot by themselves close that gap. He retains human code review while moving decisions about product behavior, architecture, and program design earlier to reduce rework. The publisher provides a [companion and transcript](https://ai.engineer/talks/Ib5GBkD555M-harness-engineering-is-not-enough-why-software). Together, these talks trace an increasing emphasis on human understanding and ownership alongside the original work on agent context.
+
+**The intoxication of deferred responsibility.** The agent writes a plausible plan, produces a patch, and reports passing tests. Approving the next step offers immediate relief from a difficult problem, even as your understanding of the system falls behind. If something breaks, you have to reconstruct decisions you never examined, now buried in a much larger change. The effort you postponed returns as debugging, rework, or someone else's review burden. Our takeaway from Horthy's transition is to build understanding into the workflow while decisions are still small enough to question and change.
+
+**Practical application:** At each design or implementation checkpoint, identify the decision a person needs to make, the evidence they need, and who owns the result. Keep each change small enough for its reviewer to explain the behavior and important tradeoffs. If understanding falls behind generation, pause to resolve it before adding more code. Pair this with [Litt's discussion of understanding as participation](#understanding-as-participation-geoffrey-litt).
 
 ### Applying the ideas to increase quality
 

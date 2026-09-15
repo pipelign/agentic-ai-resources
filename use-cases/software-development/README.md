@@ -15,11 +15,12 @@ Both guides assume familiarity with repositories, tests, and code review.
 
 ## Further reading
 
-This practitioner explanation is useful for developers improving the environment and feedback available to a coding agent.
+These practitioner resources are useful for developers improving agent environments, feedback, and human review.
 
 | Material | Why read it |
 | --- | --- |
 | [Harness engineering for coding agent users](https://martinfowler.com/articles/harness-engineering.html) | How repository environments and feedback support the runtime. |
+| [Everything We Got Wrong About Research-Plan-Implement](https://www.youtube.com/watch?v=YwZR6tc7qYg) — Dex Horthy | His amendment to RPI. The [annotation, selected passages, and later perspective](practitioner-workflows-and-commentary-2026-09.md#amendment-rpi-deferred-responsibility-and-cognitive-load) trace the transition toward human ownership and the limits of harness engineering. Reviewed 2026-09-15. |
 
 ## Repositories and reusable workflow packages
 

@@ -38,6 +38,7 @@ How coding agents use context, tools, and feedback, and how to assess their work
 ## 7. Bring human understanding into the picture
 
 - [Geoffrey Litt: understanding as participation](../../use-cases/software-development/practitioner-workflows-and-commentary-2026-09.md#understanding-as-participation-geoffrey-litt) — why understanding a change matters for deciding what comes next.
+- [Dex Horthy: amendment to RPI](../../use-cases/software-development/practitioner-workflows-and-commentary-2026-09.md#amendment-rpi-deferred-responsibility-and-cognitive-load) — his revised advice on code ownership, with a discussion of deferred responsibility and cognitive load.
 
 [More videos](../../use-cases/software-development/practitioner-workflows-and-commentary-2026-09.md#videos-improving-quality-and-human-understanding) — software fundamentals, testing, and continuous feedback.
 
@@ -46,7 +47,7 @@ How coding agents use context, tools, and feedback, and how to assess their work
 - [How a harness discovers and uses a skill](../../foundations/tool-use-and-integrations/skills-tools-hooks-and-delegation.md#how-a-harness-discovers-and-uses-a-skill) — loading a procedure and its supporting resources.
 - [Tools, MCP, hooks, and subagents](../../foundations/tool-use-and-integrations/skills-tools-hooks-and-delegation.md#tools-mcp-hooks-and-subagents) — integrations, event-driven checks, and delegated work.
 - [Matt Pocock: a complete development workflow](../../use-cases/software-development/practitioner-workflows-and-commentary-2026-09.md#a-complete-development-workflow-matt-pocock) — how clarification, implementation, and review connect in practice.
-- [Dex Horthy: keeping teams aligned in complex codebases](../../use-cases/software-development/practitioner-workflows-and-commentary-2026-09.md#keeping-teams-aligned-in-complex-codebases-dex-horthy) — how research, plans, and context management support shared understanding.
+- [Dex Horthy: keeping teams aligned in complex codebases](../../use-cases/software-development/practitioner-workflows-and-commentary-2026-09.md#keeping-teams-aligned-in-complex-codebases-dex-horthy) — the earlier RPI approach; read together with the amendment in step 7.
 - [Published practitioner workflows](../../use-cases/software-development/practitioner-workflows-and-commentary-2026-09.md#published-practitioner-workflows) — approaches to planning, context, implementation, and review.
 
 [Back to learning](../README.md)
