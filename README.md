@@ -1,7 +1,5 @@
 # Agentic AI Resources
 
-> AI Use Disclosure: Codex was used to research, organize, and draft this guide.
-
 A growing collection of explanations, tools, workflows, research, and practical examples for agentic AI across software development, research, personal productivity, business operations, creative work, and physical systems.
 
 > **Work in progress:** Coverage is partial, and the content and organization are still evolving. The initial material focuses on AI fundamentals and software-development agents. Most of the broader application areas below are planned additions.
