@@ -16,4 +16,4 @@ The collection combines visual learning resources with articles that use example
 ## Apply the concepts
 
 - [Software development](../use-cases/software-development/README.md) connects the foundations to a worked example, engineering practices, and practitioner accounts.
-- [Repository overview](../README.md) describes the broader collection and proposed categories.
+- [Repository overview](../README.md) describes the broader collection and planned categories.

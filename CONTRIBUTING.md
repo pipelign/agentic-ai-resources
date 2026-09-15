@@ -16,16 +16,32 @@ Useful contributions include annotated resources, original explanations, practic
 
 ## Where to put contributions
 
-Follow the [directory structure and placement examples](README.md#proposed-directory-structure).
+Follow the [planned directory structure](README.md#planned-directory-structure).
 
 - Choose one primary home by subject or application, and link to it from other relevant indexes.
 - Keep articles, papers, videos, and repositories about the same topic together.
-- Put product-specific setup and comparisons in `tools-and-platforms/`, reusable workflows in `patterns/`, and application-specific guides in `use-cases/`.
+- Put product-specific setup and comparisons in `tools-and-platforms/`, reusable workflows in `patterns/`, and application-specific guides in `use-cases/`. Link to product-specific setup from applied workflows.
 - Use `research/` for literature reviews, experiment reports, and open questions. Individual papers can be listed in their subject's index.
 - Create directories as content is added. Include a `README.md` explaining the scope and linking to the contents of each directory you populate.
+- Within a use case, start with a `README.md` and individual guides. Add `workflows/` or `examples/` when there is enough material to justify them.
 - Use relative links for files in this repository.
 
 If a contribution needs a new category, include a short explanation of its scope in the pull request.
+
+### Example resource placements
+
+These examples illustrate how different resources could fit into the planned structure.
+
+| Example resource | Suggested primary home |
+| --- | --- |
+| Explanation of agent memory | `foundations/context-and-memory/` |
+| General workflow for producing a sourced report | `patterns/research-and-synthesis/` |
+| Guide to a specific agent framework | `tools-and-platforms/frameworks-and-runtimes/` |
+| Workflow for managing an inbox or calendar | `use-cases/personal-productivity/` |
+| Customer-support triage example | `use-cases/customer-support/` |
+| Tutorial on evaluating task completion | `evaluation-and-operations/task-success-and-benchmarks/` |
+| Guide to preventing prompt injection | `safety-and-governance/prompt-injection-and-security/` |
+| Dated review of developments across agentic AI | `research/surveys/` |
 
 ## Adding an external resource
 

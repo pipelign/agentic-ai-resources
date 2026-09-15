@@ -2,18 +2,20 @@
 
 > AI Use Disclosure: Codex was used to research, organize, and draft this guide.
 
-A curated collection of explanations, tools, workflows, research, and practical examples for agentic AI across software development, research, personal productivity, business operations, creative work, and physical systems.
+A growing collection of explanations, tools, workflows, research, and practical examples for agentic AI across software development, research, personal productivity, business operations, creative work, and physical systems.
 
-## Browse the collection
+> **Work in progress:** Coverage is partial, and the content and organization are still evolving. The initial material focuses on AI fundamentals and software-development agents. Most of the broader application areas below are planned additions.
+
+## Available so far
 
 - [Foundations](foundations/README.md) — neural networks and embeddings, agent loops, context and memory, skills, tools, and delegation.
 - [Use cases](use-cases/README.md) — applied guides and resources, starting with software development.
 
-## Proposed directory structure
+## Planned directory structure
 
-Organize resources primarily by subject and application. Keep articles, papers, videos, and repositories together when they help someone learn the same topic.
+The collection is organized by subject and application, with related articles, papers, videos, and repositories grouped together.
 
-This is a proposed layout. Create directories as resources are added; each populated directory should have a `README.md` that explains its scope and indexes its contents.
+The tree below is a working plan for the collection. Many directories are still to be created, and categories may change as resources are added.
 
 ```text
 agentic-ai-resources/
@@ -89,34 +91,6 @@ agentic-ai-resources/
 └── assets/                          # Images and diagrams used in documents
 ```
 
-## Example resource placements
-
-These examples illustrate how different resources could fit into the proposed structure.
-
-| Example resource | Suggested primary home |
-| --- | --- |
-| Explanation of agent memory | `foundations/context-and-memory/` |
-| General workflow for producing a sourced report | `patterns/research-and-synthesis/` |
-| Guide to a specific agent framework | `tools-and-platforms/frameworks-and-runtimes/` |
-| Workflow for managing an inbox or calendar | `use-cases/personal-productivity/` |
-| Customer-support triage example | `use-cases/customer-support/` |
-| Tutorial on evaluating task completion | `evaluation-and-operations/task-success-and-benchmarks/` |
-| Guide to preventing prompt injection | `safety-and-governance/prompt-injection-and-security/` |
-| Dated review of developments across agentic AI | `research/surveys/` |
-
-Use one primary home for each resource and link to it from other relevant indexes. For example, a research paper about memory belongs in the memory index; `research/` holds substantial literature reviews, experiment reports, and discussions of open questions.
-
-Within a use case, start with a `README.md` and individual guides. Add `workflows/` or `examples/` when there is enough material to justify them. A runnable example should document its setup, expected result, and required access.
-
-## Curation conventions
-
-- Use lowercase, hyphenated file and directory names.
-- Date time-sensitive surveys and comparisons with `YYYY-MM` or `YYYY-MM-DD`; keep stable explanations undated.
-- For each external resource, include a title, source link, short description, audience or prerequisites, and date last reviewed.
-- Distinguish official documentation, research findings, practitioner accounts, and repository-authored recommendations.
-- Keep vendor-specific setup in `tools-and-platforms/` and link to it from applied workflows.
-- Prefer annotated selections over unfiltered link lists. Explain what a resource helps someone understand or accomplish.
-
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for resource selection, contribution formats, and submission guidelines.
+Suggestions, corrections, and resources for areas with little or no coverage are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for resource selection, contribution formats, and submission guidelines.

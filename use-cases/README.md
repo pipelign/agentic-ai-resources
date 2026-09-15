@@ -8,4 +8,4 @@ Applied guides, workflows, and examples organized by the work an agent helps acc
 
 - [Software development](software-development/README.md) — coding practices, a worked example, published workflows, and supporting resources.
 
-The [repository overview](../README.md#proposed-directory-structure) outlines additional application areas to populate as resources are added. Start with [foundations](../foundations/README.md) for concepts shared across those areas.
+The [repository overview](../README.md#planned-directory-structure) outlines additional application areas to populate as resources are added. Start with [foundations](../foundations/README.md) for concepts shared across those areas.
