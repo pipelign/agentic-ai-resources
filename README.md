@@ -4,9 +4,9 @@ A growing collection of explanations, tools, workflows, research, and practical 
 
 > **Work in progress:** Coverage is partial, and the content and organization are still evolving. The initial material focuses on AI fundamentals and software-development agents. Most of the broader application areas below are planned additions.
 
-## Available so far
+## Quick links
 
-- [Learning paths](learning/README.md) — guided routes through ML fundamentals and understanding coding agents.
+- **[Learning paths](learning/README.md) — the easiest way to get started.** Follow guided routes through ML fundamentals and understanding coding agents.
 - [Foundations](foundations/README.md) — neural networks and embeddings, agent loops, context and memory, skills, tools, and delegation.
 - [Use cases](use-cases/README.md) — applied guides and resources, starting with software development.
 
@@ -18,79 +18,16 @@ The tree below is a working plan for the collection. Many directories are still 
 
 ```text
 agentic-ai-resources/
-├── README.md                         # Overview and navigation
-├── CONTRIBUTING.md                   # Submission and curation guidelines
-│
-├── foundations/                      # Concepts shared across applications
-│   ├── neural-networks/
-│   ├── agent-loops-and-autonomy/
-│   ├── planning-and-reasoning/
-│   ├── context-and-memory/
-│   ├── tool-use-and-integrations/
-│   └── multi-agent-systems/
-│
-├── patterns/                         # Reusable ways to structure agent work
-│   ├── research-and-synthesis/
-│   ├── retrieval-and-knowledge/
-│   ├── routing-and-delegation/
-│   ├── human-in-the-loop/
-│   ├── review-and-verification/
-│   └── scheduled-and-event-driven/
-│
-├── tools-and-platforms/              # Product guides and comparisons
-│   ├── models-and-providers/
-│   ├── frameworks-and-runtimes/
-│   ├── agent-apps/
-│   ├── automation-platforms/
-│   ├── browser-and-computer-use/
-│   ├── protocols-and-connectors/
-│   └── deployment-and-hosting/
-│
-├── use-cases/                        # Applied guides, workflows, and examples
-│   ├── software-development/
-│   ├── research-and-discovery/
-│   ├── data-analysis/
-│   ├── personal-productivity/
-│   ├── business-operations/
-│   ├── customer-support/
-│   ├── sales-and-marketing/
-│   ├── creative-and-media/
-│   ├── education-and-training/
-│   └── robotics-and-physical-systems/
-│
-├── evaluation-and-operations/        # Measuring quality and running agents
-│   ├── task-success-and-benchmarks/
-│   ├── testing-and-simulation/
-│   ├── observability-and-debugging/
-│   ├── reliability-and-recovery/
-│   └── cost-and-performance/
-│
-├── safety-and-governance/            # Boundaries and accountability
-│   ├── permissions-and-sandboxing/
-│   ├── prompt-injection-and-security/
-│   ├── privacy-and-data-handling/
-│   └── oversight-and-auditability/
-│
-├── research/                        # Dated synthesis and original findings
-│   ├── surveys/
-│   ├── experiments/
-│   └── open-questions/
-│
-├── learning/                        # Guided routes through the collection
-│   ├── README.md
-│   ├── getting-started.md
-│   ├── glossary.md
-│   └── learning-paths/
-│       ├── ml-fundamentals.md
-│       └── understanding-coding-agents.md
-│
-├── templates/                       # Reusable starting points
-│   ├── resource-entry.md
-│   ├── workflow.md
-│   ├── evaluation-plan.md
-│   └── agent-instructions/
-│
-└── assets/                          # Images and diagrams used in documents
+├── foundations/                  # e.g., neural networks, embeddings, agent loops, memory
+├── patterns/                     # e.g., delegation, retrieval, human review
+├── tools-and-platforms/          # e.g., frameworks, agent apps, integrations
+├── use-cases/                    # e.g., coding, research, productivity, creative work, robotics
+├── evaluation-and-operations/    # e.g., benchmarks, debugging, reliability, cost
+├── safety-and-governance/        # e.g., permissions, privacy, security, auditability
+├── research/                     # e.g., surveys, experiments, open questions
+├── learning/                     # e.g., learning paths, introductory guides, glossaries
+├── templates/                    # e.g., resource entries, workflows, agent instructions
+└── assets/                       # e.g., diagrams, screenshots, illustrations
 ```
 
 ## Contributing
