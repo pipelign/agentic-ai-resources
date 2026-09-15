@@ -6,6 +6,7 @@ A growing collection of explanations, tools, workflows, research, and practical 
 
 ## Available so far
 
+- [Learning paths](learning/README.md) — guided routes through ML fundamentals and understanding coding agents.
 - [Foundations](foundations/README.md) — neural networks and embeddings, agent loops, context and memory, skills, tools, and delegation.
 - [Use cases](use-cases/README.md) — applied guides and resources, starting with software development.
 
@@ -76,9 +77,12 @@ agentic-ai-resources/
 │   └── open-questions/
 │
 ├── learning/                        # Guided routes through the collection
+│   ├── README.md
 │   ├── getting-started.md
 │   ├── glossary.md
 │   └── learning-paths/
+│       ├── ml-fundamentals.md
+│       └── understanding-coding-agents.md
 │
 ├── templates/                       # Reusable starting points
 │   ├── resource-entry.md
