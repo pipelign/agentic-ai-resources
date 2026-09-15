@@ -24,11 +24,12 @@ This guide follows the ideas behind neural networks: learning from examples, rep
 | Step | Question | Start here |
 | --- | --- | --- |
 | 1 | What is a neural network, and how does it learn? | [3Blue1Brown's first three chapters](#1-neural-networks-and-learning) |
-| 2 | How can a word become a useful list of numbers? | [Jay Alammar on word2vec](#2-vector-embeddings-and-word2vec) |
+| 2 | How does a language model generate a response? | [How language models work, with a short 3Blue1Brown explainer](../language-models/how-language-models-work.md) |
 | 3 | How does a representation change with its context? | [3Blue1Brown on transformers and attention](#3-transformers-and-attention) |
-| 4 | What did BERT contribute to language understanding? | [BERT explainers and the illustrated history](#4-bert-and-contextual-representations) |
-| 5 | How do vectors help find related sentences and documents? | [Similarity and sentence embeddings](#5-sentence-embeddings-and-semantic-search) |
-| 6 | How do these ideas apply to images and sequences? | [CNNs, recurrent networks, and diffusion](#beyond-language-models) |
+| 4 | How does a pretrained model become an assistant? | [Demonstrations and feedback](../language-models/how-language-models-work.md#how-a-pretrained-model-becomes-an-assistant) |
+| 5 | What do reasoning models add? | [Intermediate work, training, and inference](../language-models/reasoning-models.md) |
+
+For embeddings and retrieval, follow [word2vec](#2-vector-embeddings-and-word2vec), [BERT](#4-bert-and-contextual-representations), and [sentence embeddings](#5-sentence-embeddings-and-semantic-search). For applications beyond language, explore [CNNs, recurrent networks, and diffusion](#beyond-language-models).
 
 The alternative videos offer a second explanation when a concept needs more time. Creator-produced videos teach intuition; the linked papers document particular methods and results. All resource annotations below were reviewed on **2026-09-15**.
 
@@ -108,7 +109,7 @@ Two points help interpret the visual explanations:
 
 ## Selected historical milestones
 
-These publications provide a path through the ideas, with an emphasis on language representations. Dates identify the cited publications or initial arXiv releases; the developments overlap and build on earlier work. The papers are primary research references, and their mathematical details are optional for the viewing path.
+These publications connect language representations, generative models, assistant training, and reasoning. Dates identify the cited publications or initial arXiv releases; the developments overlap and build on earlier work. The papers are primary research references, and their mathematical details are optional for the viewing path.
 
 | Date | Milestone and primary source | Why it belongs in the story |
 | --- | --- | --- |
@@ -121,6 +122,11 @@ These publications provide a path through the ideas, with an emphasis on languag
 | 2018 | Peters and colleagues: [ELMo / Deep contextualized word representations](https://arxiv.org/abs/1802.05365) | Produced representations that change with a word's context using a bidirectional recurrent language model. Contextual embeddings also developed outside transformer architectures. |
 | 2018 | Devlin and colleagues: [BERT](https://arxiv.org/abs/1810.04805) | Combined transformer encoders with bidirectional pretraining and adaptation to language-understanding tasks. The initial preprint appeared in 2018; the conference publication followed in 2019. |
 | 2019 | Reimers and Gurevych: [Sentence-BERT](https://arxiv.org/abs/1908.10084) | Adapted pretrained encoders to produce sentence embeddings suitable for efficient similarity comparisons. |
+| 2020 | Brown and colleagues: [GPT-3 / Language Models are Few-Shot Learners](https://arxiv.org/abs/2005.14165) | Demonstrated task adaptation through instructions and examples in context without task-specific weight updates. |
+| 2022 | Wei and colleagues: [Chain-of-Thought Prompting](https://arxiv.org/abs/2201.11903) | Showed how examples of intermediate reasoning could improve performance on studied reasoning tasks. |
+| 2022 | Ouyang and colleagues: [InstructGPT](https://arxiv.org/abs/2203.02155) | Combined demonstrations and human preference feedback to improve instruction following. |
+| 2023 | Rafailov and colleagues: [Direct Preference Optimization](https://arxiv.org/abs/2305.18290) | Offered a direct method for learning from response preferences. |
+| 2025 | DeepSeek-AI: [DeepSeek-R1, original report](https://arxiv.org/html/2501.12948v1) | Documented reasoning training using reinforcement learning, supervised data, and distillation. |
 
 For a visual narrative connecting several of these developments, return to [Alammar's illustrated history of BERT and its predecessors](https://jalammar.github.io/illustrated-bert/).
 
@@ -138,8 +144,8 @@ These additional creator-produced videos widen the picture after the neural-netw
 
 The next step is understanding how a model participates in a larger system:
 
+- [How language models work](../language-models/how-language-models-work.md) connects neural networks to generation, assistant training, and current context.
+- [Reasoning models](../language-models/reasoning-models.md) explains intermediate work and how it connects to evidence from tools.
 - [How agents work](../agent-loops-and-autonomy/how-agents-work.md) introduces the runtime, tools, environment, and action loop around a model.
 - [Context engineering and memory](../context-and-memory/context-engineering-and-memory.md) explains how retrieved information and working state become available during a task.
 - [Skills, tools, hooks, and delegation](../tool-use-and-integrations/skills-tools-hooks-and-delegation.md) explains the mechanisms for organizing and executing agent work.
-
-A useful self-check is to explain the difference between training a model, computing an embedding, retrieving a document, generating a response, and executing a tool call. The resources in this guide and the linked agent articles cover each part.

@@ -88,6 +88,8 @@ The next search depends on what earlier sources reveal. A successful search alon
 
 ## Related reading
 
+- [How language models work](../language-models/how-language-models-work.md) explains generation and assistant training.
+- [Reasoning models](../language-models/reasoning-models.md) connects intermediate model work to tool execution and evidence.
 - [Context engineering and memory](../context-and-memory/context-engineering-and-memory.md) explains which information reaches each step of the loop.
 - [Skills, tools, hooks, and delegation](../tool-use-and-integrations/skills-tools-hooks-and-delegation.md) explains how procedures and capabilities fit together.
 - [Topic index and further reading](README.md) lists supporting documentation.

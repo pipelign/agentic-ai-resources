@@ -8,12 +8,12 @@ A growing collection of explanations, tools, workflows, research, and practical 
 
 The [learning paths](learning/README.md) are the easiest way to get started.
 
-- [ML fundamentals](learning/learning-paths/ml-fundamentals.md)
+- [Neural networks and language models](learning/learning-paths/neural-networks-and-language-models.md)
 - [Understanding coding agents](learning/learning-paths/understanding-coding-agents.md)
 
 ## Quick links
 
-- [Foundations](foundations/README.md) — neural networks and embeddings, agent loops, context and memory, skills, tools, and delegation.
+- [Foundations](foundations/README.md) — neural networks, language and reasoning models, embeddings, agent loops, context, and tools.
 - [Use cases](use-cases/README.md) — applied guides and resources, starting with software development.
 
 ## Planned directory structure
@@ -24,7 +24,7 @@ The tree below is a working plan for the collection. Many directories are still 
 
 ```text
 agentic-ai-resources/
-├── foundations/                  # e.g., neural networks, embeddings, agent loops, memory
+├── foundations/                  # e.g., neural networks, LLMs, reasoning, agent loops, memory
 ├── patterns/                     # e.g., delegation, retrieval, human review
 ├── tools-and-platforms/          # e.g., frameworks, agent apps, integrations
 ├── use-cases/                    # e.g., coding, research, productivity, creative work, robotics

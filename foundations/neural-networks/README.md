@@ -14,6 +14,7 @@ Fundamentals of learning from examples and representing information numerically,
 
 ## Related topics
 
+- [Language models and reasoning](../language-models/README.md)
 - [Agent loops and autonomy](../agent-loops-and-autonomy/README.md)
 - [Context and memory](../context-and-memory/README.md)
 - [All foundations](../README.md)
